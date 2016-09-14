@@ -1,0 +1,30 @@
+{
+  "name": "to-do-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app",
+    "build": "webpack",
+    "prestart": "npm run build",
+    "prebuild": "npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kthakre9/To-do-app.git"
+  },
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "express": "^4.13.4",
+    "method-override": "^2.1.3",
+    "mysql": "^2.5.4",
+    "webpack": "^1.9.11"
+  },
+  "author": "Ketki Thakre",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kthakre9/To-do-app/issues"
+  },
+  "homepage": "https://github.com/kthakre9/To-do-app#readme"
+}

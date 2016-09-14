@@ -1,0 +1,16 @@
+# Dependency directory
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
+node_modules
+
+#generated files
+app/build
+
+#local files
+local*.json
+
+# Webstorm project settings
+.idea/**
+
+#eclipse
+.settings/**
+.project
