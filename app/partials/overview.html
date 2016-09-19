@@ -1,0 +1,22 @@
+<section class="meals">
+  <h1>Meals</h1>
+  <div class="meal" ng-repeat="meal in meals">
+    <h1 ui-sref="meal">{{meal.day}}</h1>
+    <div>
+      <p>Breakfast: {{meal.breakfast}}</p>
+    </div>
+    <div>
+      <p>Lunch: {{meal.lunch}}</p>
+    </div>
+
+    <div>
+      <p>Dinner: {{meal.dinner}}</p>
+    </div>
+
+    <div>
+      <p>Snacks: {{meal.snacks}}</p>
+    </div>
+  </div>
+
+</section>
+<section class="grocery"></section>

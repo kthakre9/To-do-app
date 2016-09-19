@@ -1,32 +1,48 @@
 var express  = require('express');
-var app      = express();                               // create our app w/ express
-var bodyParser = require('body-parser');    // pull information from HTML POST (express4)
-var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
+var bodyParser = require('body-parser');
+var path = require('path');
 var mysql = require('mysql');
+var meal = require('./app/model/mealsModel');
+var connection = require('./connection');
 
-// configuration =================
+var app = express();
+connection.init();
 
-var connection = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : '',
-    database : 'todo'
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json()); // parse application/json
+app.use(express.static(path.join(__dirname, 'app')));
+
+//Get all meals
+app.get('/meals', function (req, res) {
+  meal.get(res);
 });
 
-connection.connect(function(err){
-    if(!err) {
-        console.log("Database is connected ... nn");
-    } else {
-        console.log("Error connecting database ... nn", err);
-    }
+//Post a meal
+app.post('/meals', function (req, res) {
+  console.log("request body",req.body);
+  meal.create(req.body, res);
 });
 
-app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
-app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
-app.use(bodyParser.json());                                     // parse application/json
-app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
-app.use(methodOverride());
+//Get single meal
+app.get('/meals/:meal_id', function (req, res) {
+
+});
+
+//Delete a meal
+app.delete('/meals/:meal_id', function(req,res){
+
+});
+
+//Update a meal
+app.put('/meals/:meal_id', function(req,res){
+
+});
+
+
 
 // listen (start app with node server.js) ======================================
-app.listen(8080);
-console.log("App listening on port 8080");
+app.listen(8080,function(){
+  console.log('Node server running @ http://localhost:8080')
+});
+
+module.exports = app;
