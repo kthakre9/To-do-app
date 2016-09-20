@@ -4,6 +4,7 @@ require('jquery');
 var mealsApp = angular.module('mealsApp', ['ui.router']);
 
 require('../controllers/mealController');
+require('../controllers/mealDetailController');
 
 mealsApp.config(function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
@@ -25,14 +26,14 @@ mealsApp.config(function ($stateProvider, $urlRouterProvider) {
     }
   })
   .state('meal', {
-    url: '/meal',
+    url: '/meal/:id',
     views: {
       header:{
         templateUrl: '/partials/header.html'
       },
       content: {
         templateUrl: '/partials/meal.html',
-        controller: 'mealController'
+        controller: 'mealDetailController'
       }
       // footer: {
       //   templateUrl: '/partials/footer.html'

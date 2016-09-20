@@ -4,7 +4,6 @@ module.exports = angular.module('mealsApp')
 
   $http.get('/meals').success(function(response){
     $scope.meals = response;
-    console.log($scope.meals);
   });
 
   $scope.createMeal = function() {
@@ -12,11 +11,6 @@ module.exports = angular.module('mealsApp')
     var lunch = $scope.lunch;
     var dinner = $scope.dinner;
     var snacks = $scope.snacks;
-
-    console.log("createMeal function", breakfast);
-    console.log("createMeal function", lunch);
-    console.log("createMeal function", dinner);
-    console.log("createMeal function", snacks);
 
     var data = {
       breakfast:breakfast,
@@ -32,4 +26,17 @@ module.exports = angular.module('mealsApp')
       console.log('Error: ' + response);
     });
   };
+
+  $scope.deleteMeal = function(id){
+    alert("Are you sure you want to delete this meal entry?");
+    var parameters = {
+      id: id
+    };
+    var config = {
+      params: parameters
+    };
+    $http.delete('/meals/:id', config).success(function(response){
+      console.log("response back", response);
+    });
+  }
 }]);

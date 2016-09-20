@@ -37,9 +37,10 @@ footer{
 
 .meal{
   width: 90%;
-  height: 200px;
+  height: 250px;
   border: 1px dashed green;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 .meal h1{
@@ -48,6 +49,76 @@ footer{
   text-align: center;
 }
 
+.mealview{
+  width: 90%;
+  height: 400px;
+  border: 1px dashed green;
+  margin: 40px auto 20px auto;
+}
+
+.mealview h1{
+  margin-top: 25px;
+  color: pink;
+  text-align: center;
+}
+
+.mealview div{
+  margin-bottom: 10px;
+}
+
 .meal div{
   margin: 5px 0 10px 10px;
+}
+
+.floatRight{
+  float: right;
+  margin-top: -30px;
+  margin-right: 10px;
+}
+
+.btn {
+  border-radius: 26px;
+  color: #ffffff;
+  font-size: 15px;
+  background: #ffc0cb;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-top: 15px;
+}
+
+.btn:hover {
+  background: #008000;
+  text-decoration: none;
+  color: #000000;
+}
+
+.text_box {
+  margin-left: 10px;
+  background:#F8F8F8;
+  color:#999999;
+  border:1px solid #DCDCDC;
+  border-radius:24px ;
+  font-size:16px ;
+  height: 30px ;
+  line-height:30px ;
+  width: 250px ;
+  padding: 10px ;
+  box-shadow: -1px 0px 8px #FFFFFF;
+  -webkit-box-shadow: -1px 0px 8px #FFFFFF;
+  -moz-box-shadow: -1px 0px 8px #FFFFFF;
+}
+.wrap_div{
+  text-align: center;
+}
+
+.lunch{
+  margin-left: 30px;
+}
+
+.dinner{
+  margin-left: 26px;
+}
+
+.snacks{
+  margin-left: 25px;
 }

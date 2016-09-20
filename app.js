@@ -19,26 +19,24 @@ app.get('/meals', function (req, res) {
 
 //Post a meal
 app.post('/meals', function (req, res) {
-  console.log("request body",req.body);
   meal.create(req.body, res);
 });
 
 //Get single meal
-app.get('/meals/:meal_id', function (req, res) {
-
-});
-
-//Delete a meal
-app.delete('/meals/:meal_id', function(req,res){
-
+app.get('/meals/:id', function (req, res) {
+  meal.getById(req.query.id, res);
 });
 
 //Update a meal
 app.put('/meals/:meal_id', function(req,res){
-
+  meal.update(req.body, req.query.id, res);
 });
 
-
+//Delete a meal
+app.delete('/meals/:meal_id', function(req,res){
+  console.log(req.query.id);
+  meal.delete(req.query.id, res);
+});
 
 // listen (start app with node server.js) ======================================
 app.listen(8080,function(){

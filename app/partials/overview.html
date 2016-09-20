@@ -1,9 +1,13 @@
 <section class="meals">
   <h1>Meals</h1>
   <div class="meal" ng-repeat="meal in meals">
-    <h1 ui-sref="meal">{{meal.day}}</h1>
+    <h1>{{meal.day}}</h1>
+    <span class="floatRight">
+      <img ui-sref="meal({ id: meal.idMeals})" src="../images/edit2.png" alt="edit" width="30" height="30">
+      <img ng-click="deleteMeal(meal.idMeals)" src="../images/delete2.png" alt="edit" width="30" height="30">
+    </span>
     <div>
-      <p>Breakfast: {{meal.breakfast}}</p>
+      <p>Breakfast:{{meal.breakfast}}</p>
     </div>
     <div>
       <p>Lunch: {{meal.lunch}}</p>
@@ -17,6 +21,5 @@
       <p>Snacks: {{meal.snacks}}</p>
     </div>
   </div>
-
 </section>
 <section class="grocery"></section>
