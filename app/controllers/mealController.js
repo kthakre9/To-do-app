@@ -38,5 +38,72 @@ module.exports = angular.module('mealsApp')
     $http.delete('/meals/:id', config).success(function(response){
       console.log("response back", response);
     });
-  }
+  };
+
+
+  $http.get('/groceries').success(function (response) {
+
+    var groceries = response;
+    $scope.fruits = [];
+    $scope.vegetables = [];
+    $scope.beverages = [];
+    $scope.dairy = [];
+    $scope.breads = [];
+    $scope.snacks = [];
+    $scope.condiments = [];
+    $scope.frozen = [];
+    $scope.meats = [];
+    $scope.baking = [];
+    $scope.cereal = [];
+    $scope.home = [];
+    $scope.toiletries = [];
+
+    angular.forEach(groceries, function(value, key) {
+      console.log(value);
+      console.log(value.ItemCategory);
+      if(value.ItemCategory === 'Fruits'){
+        $scope.fruits.push(value);
+      }
+      else if(value.ItemCategory === 'Vegetables'){
+        $scope.vegetables.push(value);
+      }
+      else if(value.ItemCategory === 'Beverages'){
+        $scope.beverages.push(value);
+      }
+      else if(value.ItemCategory === 'Dairy'){
+        $scope.dairy.push(value);
+      }
+      else if(value.ItemCategory === 'Breads/Grains'){
+        $scope.breads.push(value);
+      }
+      else if(value.ItemCategory === 'Snacks'){
+        $scope.snacks.push(value);
+      }
+      else if(value.ItemCategory === 'Condiments'){
+        $scope.condiments.push(value);
+      }
+      else if(value.ItemCategory === 'Frozen Food'){
+        $scope.frozen.push(value);
+      }
+      else if(value.ItemCategory === ' Meat'){
+        $scope.meats.push(value);
+      }
+      else if(value.ItemCategory === ' Baking'){
+        $scope.baking.push(value);
+      }
+      else if(value.ItemCategory === ' Cereal'){
+        $scope.cereal.push(value);
+      }
+      else if(value.ItemCategory === ' Home'){
+        $scope.home.push(value);
+      }
+      else if(value.ItemCategory === ' Toiletries'){
+        $scope.toiletries.push(value);
+      }
+
+    });
+
+    console.log("fruits", $scope.fruits);
+    //$scope.groceries = response;
+  });
 }]);

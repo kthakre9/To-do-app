@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var mysql = require('mysql');
 var meal = require('./app/model/mealsModel');
+var grocery = require('./app/model/groceryModel');
 var connection = require('./connection');
 
 var app = express();
@@ -11,6 +12,13 @@ connection.init();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json()); // parse application/json
 app.use(express.static(path.join(__dirname, 'app')));
+
+
+//Get all Grocery Items
+app.get('/groceries', function (req, res) {
+  grocery.get(res);
+});
+
 
 //Get all meals
 app.get('/meals', function (req, res) {

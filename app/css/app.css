@@ -7,14 +7,16 @@ html, body{
 
 header{
   width: 100%;
-  height: 80px;
+  height: 45px;
   text-align: center;
   top: 0;
-  border-bottom: 1px dashed green;
+  border-bottom: 1px solid pink;
 }
 
 header h1{
-  color: pink;
+  font: 400 37px/0.8 'Lobster Two', Helvetica, sans-serif;
+  margin-top: -21px;
+  color: green;
 }
 
 .content{
@@ -30,29 +32,40 @@ footer{
 
 .meals{
   width: 40%;
-  height: 90vh;
   float: left;
-  border-right: 1px dashed green;
+  border-right: 1px solid pink;
 }
 
 .meal{
-  width: 90%;
-  height: 250px;
-  border: 1px dashed green;
-  margin: 0 auto;
-  margin-bottom: 20px;
+  width: 45%;
+  float: left;
+  height: 175px;
+  border: 1px solid green;
+  margin: 35px 10px 10px 10px;
+}
+
+.meal p{
+  margin-left: 10px;
+  font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
 
 .meal h1{
-  margin-top: 0px;
-  color: pink;
+  margin-top: -15px;
+  color: white;
   text-align: center;
+  font-family: 'Lobster Two', Helvetica, sans-serif;
+}
+
+.wrap_h1{
+  background-color: white;
+  padding: 0 15px 0 15px;
+  margin-left: 10%;
 }
 
 .mealview{
   width: 90%;
   height: 400px;
-  border: 1px dashed green;
+  border: 1px solid green;
   margin: 40px auto 20px auto;
 }
 
@@ -72,7 +85,7 @@ footer{
 
 .floatRight{
   float: right;
-  margin-top: -30px;
+  margin-top: -20px;
   margin-right: 10px;
 }
 
@@ -121,4 +134,58 @@ footer{
 
 .snacks{
   margin-left: 25px;
+}
+
+.block-text{
+  background-color: pink;
+  padding: 10px 10px 10px 10px;
+}
+
+.border-lace {
+  border-top: 31px solid #b3ffb3;
+  border-image-source: url("http://terrimorse.typepad.com/.a/6a01156e901f1c970c013487540e10970c-pi");
+  border-image-slice: 215 115;
+  border-image-repeat: round;
+}
+
+.grocery_section{
+  margin-left: 10px;
+  height: 100vh;
+  width: 226px;
+  float: left;
+  border-right: 1px dotted crimson;
+}
+
+.grocery_section:last-child{
+  border-right: none;
+}
+
+.grocery_section h1{
+  font-family: 'Lobster Two', Helvetica, sans-serif;
+}
+
+.grocery_section label{
+  margin-left: 10px;
+  font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
+.regular-checkbox {
+  -webkit-appearance: none;
+  background-color: #fafafa;
+  border: 1px solid #cacece;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+  padding: 6px;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+}
+
+.regular-checkbox:active, .regular-checkbox:checked:active {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.regular-checkbox:checked {
+  background-color: green;
+  border: 1px solid green;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
 }

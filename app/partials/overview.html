@@ -1,14 +1,14 @@
 <section class="meals">
-  <h1>Meals</h1>
-  <div class="meal" ng-repeat="meal in meals">
-    <h1>{{meal.day}}</h1>
+  <div class="meal" ng-repeat="meal in meals | orderBy:'date' | limitTo : 7">
+    <h1><span class="block-text">{{meal.day}}</span></h1>
     <span class="floatRight">
       <img ui-sref="meal({ id: meal.idMeals})" src="../images/edit2.png" alt="edit" width="30" height="30">
       <img ng-click="deleteMeal(meal.idMeals)" src="../images/delete2.png" alt="edit" width="30" height="30">
     </span>
     <div>
-      <p>Breakfast:{{meal.breakfast}}</p>
+      <p>Breakfast: {{meal.breakfast}}</p>
     </div>
+
     <div>
       <p>Lunch: {{meal.lunch}}</p>
     </div>
@@ -22,4 +22,93 @@
     </div>
   </div>
 </section>
-<section class="grocery"></section>
+<section class="grocery">
+  <div class="grocery_section">
+    <h1>Fruits</h1>
+    <div ng-repeat="fruit in fruits">
+      <input type="checkbox" class="regular-checkbox" />
+      <label>{{fruit.ItemName}}</label>
+    </div>
+
+    <h1>Vegetables</h1>
+    <div ng-repeat="vegetable in vegetables">
+      <input type="checkbox" class="regular-checkbox" />
+      <label>{{vegetable.ItemName}}</label>
+    </div>
+
+    <h1>Beverages</h1>
+    <div ng-repeat="beverage in beverages">
+      <input type="checkbox" class="regular-checkbox" />
+      <label>{{beverage.ItemName}}</label>
+    </div>
+
+    <h1>Meat</h1>
+    <div ng-repeat="meat in meats">
+      <input type="checkbox" class="regular-checkbox" />
+      <label>{{meat.ItemName}}</label>
+    </div>
+
+  </div>
+  <div class="grocery_section">
+    <h1>Dairy</h1>
+    <div ng-repeat="dairys in dairy">
+      <input type="checkbox" class="regular-checkbox" />
+      <label>{{dairys.ItemName}}</label>
+    </div>
+
+    <h1>Bread</h1>
+    <div ng-repeat="bread in breads">
+      <input type="checkbox" class="regular-checkbox" />
+      <label>{{bread.ItemName}}</label>
+    </div>
+
+    <h1>Snacks</h1>
+    <div ng-repeat="snack in snacks">
+      <input type="checkbox" class="regular-checkbox" />
+      <label>{{snack.ItemName}}</label>
+    </div>
+
+
+    <h1>Cereal</h1>
+    <div ng-repeat="cer in cereal">
+      <input type="checkbox" class="regular-checkbox" />
+      <label>{{cer.ItemName}}</label>
+    </div>
+
+  </div>
+
+  <div class="grocery_section">
+    <h1>Condiments</h1>
+    <div ng-repeat="condiment in condiments">
+      <input type="checkbox" class="regular-checkbox" />
+      <label>{{condiment.ItemName}}</label>
+    </div>
+
+    <h1>Frozen</h1>
+    <div ng-repeat="fro in frozen">
+      <input type="checkbox" class="regular-checkbox" />
+      <label>{{fro.ItemName}}</label>
+    </div>
+
+    <h1>Baking</h1>
+    <div ng-repeat="bake in baking">
+      <input type="checkbox" class="regular-checkbox" />
+      <label>{{bake.ItemName}}</label>
+    </div>
+
+  </div>
+  <div class="grocery_section">
+
+    <h1>For the Home</h1>
+    <div ng-repeat="hom in home">
+      <input type="checkbox" class="regular-checkbox" />
+      <label>{{hom.ItemName}}</label>
+    </div>
+
+    <h1>Toiletries</h1>
+    <div ng-repeat="toi in toiletries">
+      <input type="checkbox" class="regular-checkbox" />
+      <label>{{toi.ItemName}}</label>
+    </div>
+  </div>
+</section>
